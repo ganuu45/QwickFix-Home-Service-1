@@ -1,0 +1,144 @@
+.admin {
+  flex: 4;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.adminTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adminContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.adminShow {
+  flex: 1;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.adminUpdate {
+  flex: 2;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  margin-left: 20px;
+}
+
+.adminShowTop {
+  display: flex;
+  align-items: center;
+}
+
+.adminShowImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.adminShowTopTitle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.ShowadminName {
+  font-weight: 600;
+}
+
+.ShowadminTitle {
+  font-weight: 300;
+}
+
+.adminShowBottom {
+  margin-top: 20px;
+}
+
+.adminShowTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(175, 170, 170);
+}
+
+.adminShowInfo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  color: #444;
+}
+
+.adminShowIcon {
+  font-size: 16px !important;
+}
+
+.adminShowInfoTitle {
+  margin-left: 10px;
+}
+
+.adminUpdateTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.adminUpdateForm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.adminUpdateItem {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.adminUpdateItem > label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.adminUpdateInput {
+  border: none;
+  width: 250px;
+  height: 30px;
+  border-bottom: 1px solid gray;
+}
+
+.adminUpdateRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.adminUpdateUpload {
+  display: flex;
+  align-items: center;
+}
+
+.adminUpdateImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.adminUpdateIcon {
+  cursor: pointer;
+}
+
+.adminUpdateButton {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+}

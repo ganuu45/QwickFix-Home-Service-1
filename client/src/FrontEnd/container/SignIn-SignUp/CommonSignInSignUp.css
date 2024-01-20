@@ -1,0 +1,65 @@
+.SignInSignUpForm {
+  padding: 3rem;
+  margin: auto;
+  right: 10rem;
+  max-width: 40rem;
+  width: 80%;
+  backdrop-filter: blur(7px) saturate(53%);
+  -webkit-backdrop-filter: blur(7px) saturate(53%);
+  background-color: #e0e4fc;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.SignInSignUpTitle {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.SignInSignUpTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+}
+
+.SignInSignUpButton {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+@media screen and (max-width: 768px) {
+  .SignInSignUp {
+    max-width: 100vw;
+    margin: 3rem;
+  }
+}
