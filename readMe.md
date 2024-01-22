@@ -1,4 +1,4 @@
-# QwickFix-Home-Service
+# QwickFix-Home-Services
 
 This README.md file provides instructions for setting up and running the project. Follow the steps below to get started.
 
