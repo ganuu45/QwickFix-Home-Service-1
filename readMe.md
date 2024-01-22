@@ -14,7 +14,7 @@ Make sure you have the following installed on your machine:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone <https://github.com/Navin-S-Patil/QwickFix-Home-Service>
+    git clone https://github.com/Navin-S-Patil/QwickFix-Home-Service
     ```
 
 2. Navigate to the client directory:
