@@ -4,9 +4,12 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/icons/logo2.png";
 import navbarStyles from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
+
 // import axios from "../../api/axios";
 // import { useContext } from "react";
 // import AuthContext from "../../context/AuthProvider";
+
+
 
 export const Navbar = () => {
   // const { auth } = useContext(AuthContext);
@@ -33,6 +36,8 @@ export const Navbar = () => {
       <div className={navbarStyles.navbar_links_logo}>
         <img src={logo} alt="logo" />
       </div>
+
+      <div className={navbarStyles.custom_Class}>QwickFix Services</div>
 
       <div className={navbarStyles.navbar_links}>
         <div className={navbarStyles.navbar_links_container}>

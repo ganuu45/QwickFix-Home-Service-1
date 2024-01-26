@@ -224,3 +224,21 @@
     background-color: var(--primary-color);
   }
 }
+
+.custom_Class {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  padding-left: 4%;
+
+  letter-spacing: 1px;
+  font-style: bold;
+  font-weight: 700;
+  
+  line-height: 9rem;
+}

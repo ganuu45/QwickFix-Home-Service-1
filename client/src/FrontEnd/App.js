@@ -13,7 +13,7 @@ import { ClientOrders } from './container/Orders-Dashboards/ClientOrders'
 import { SignUp } from './container/SignIn-SignUp/Sign-Up/SignUp';
 import { SignIn } from './container/SignIn-SignUp/Sign-In/SignIn';
 
-import { ApplianceRepair, Electrician, Plumbing, HouseCleaning, BeautyAndSpa, OnlineInstructor, EventManagement, Business } from './pages/Services/AllServices';
+import { ApplianceRepair, Electrician, Plumbing, Painter } from './pages/Services/AllServices';
 
 import { AcRepairCheckout, MicrowaveRepairCheckout, RefrigeratorRepairCheckout, WashingMachineRepairCheckout, HouseholdApplianceRepairCheckout, MixerGrinderRepairCheckout, DishwasherRepairCheckout } from './pages/service-details-pages/appliance-repair/ApplianceRepairCheckout';
 
@@ -21,13 +21,8 @@ import { Fan, Switchboard, Fuse, NewInternalWiring, InverterServicing, LightFitt
 
 import { WaterTank, TabAndMixer, BasinAndSink, ToiletAndBathroom, WaterLeakage, WholeHousePlumbing } from './pages/service-details-pages/plumbing/PlumbingCheckout';
 
-import { PestControl, BathroomCleaning, CarpetCleaning, DustCleaning, FurnitureCleaning, HouseDeepCleaning, HousePainting, KitchenDeepCleaning, SweepingAndMopping } from './pages/service-details-pages/house-cleaning/HouseCleaning';
+import { RoomPainting, PrimerPainting, DecorativeWallPainting } from './pages/service-details-pages/painter/PainterCheckout';
 
-import { HairSalonForMen, HairStylingForWomen, MakeupAndFaceCare, MassageAndTherapy, SkinCare } from './pages/service-details-pages/beauty-and-spa/BeautyAndSpa';
-
-import { CAForBusiness, BusinessConsultancy, GST, TaxPlanning } from './pages/service-details-pages/business/Business';
-import { CompleteEventManagement, Decoration, EventPlanning, FoodAndCatering, MusicAndSound, Photography } from './pages/service-details-pages/event-management/EventManagement';
-import { Coding, CookingAndBaking, FitnessAndGym, HealthAndDiet, MusicInstructor, TuitionForKids } from './pages/service-details-pages/online-instructor/OnlineInstructor';
 
 // pages for admin dashboard
 
@@ -83,11 +78,12 @@ function App() {
         <Route path="/Categories/appliance_repair" element={<ApplianceRepair />} />
         <Route path="/Categories/electrician" element={<Electrician />} />
         <Route path="/Categories/plumbing" element={<Plumbing />} />
-        <Route path="/Categories/house_cleaning" element={<HouseCleaning />} />
+        <Route path="/Categories/painter" element={<Painter />} />
+        {/* <Route path="/Categories/house_cleaning" element={<HouseCleaning />} />
         <Route path="/Categories/makeup_artist" element={<BeautyAndSpa />} />
         <Route path="/Categories/online_instructor" element={<OnlineInstructor />} />
         <Route path="/Categories/event_management" element={<EventManagement />} />
-        <Route path="/Categories/business" element={<Business />} />
+        <Route path="/Categories/business" element={<Business />} /> */}
 
 
         {/* Link in components/services/services.jsx */}
@@ -117,7 +113,11 @@ function App() {
         <Route path="/categories/plumbing/water_leakage" element={<WaterLeakage />} />
         <Route path="/categories/plumbing/whole_house_plumbing" element={<WholeHousePlumbing />} />
 
-        <Route path="/categories/house_cleaning/pest_control" element={<PestControl />} />
+        <Route path="/categories/painter/room_painting" element={<RoomPainting />} />
+        <Route path="/categories/painter/primer_painting" element={<PrimerPainting />} />
+        <Route path="/categories/painter/decorative_wall_painting" element={<DecorativeWallPainting />} />
+
+        {/* <Route path="/categories/house_cleaning/pest_control" element={<PestControl />} />
         <Route path="/categories/house_cleaning/house_deep_cleaning" element={<HouseDeepCleaning />} />
         <Route path="/categories/house_cleaning/kitchen_deep_cleaning" element={<KitchenDeepCleaning />} />
         <Route path="/categories/house_cleaning/carpet_cleaning" element={<CarpetCleaning />} />
@@ -150,7 +150,7 @@ function App() {
         <Route path="/categories/online_instructor/cooking_and_baking" element={<CookingAndBaking />} />
         <Route path="/categories/online_instructor/fitness_and_gym" element={<FitnessAndGym />} />
         <Route path="/categories/online_instructor/music_instructor" element={<MusicInstructor />} />
-        <Route path="/categories/online_instructor/tuition_for_kids" element={<TuitionForKids />} />
+        <Route path="/categories/online_instructor/tuition_for_kids" element={<TuitionForKids />} /> */}
 
         <Route path="/RegisterAsProfessional" element={<RegisterAsProfessional />} />
         <Route path="/ContactUs" element={<ContactUs />} />

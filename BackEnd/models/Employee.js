@@ -18,5 +18,5 @@ const EmployeeSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   address: { type: String, required: true },
   description: { type: String, required: true },
-  rating: { type: Number, required: true },
+  rating: { type: Number, required: false, default: 5 , min: 0, max: 5},
 });

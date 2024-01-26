@@ -12,6 +12,10 @@
   position: relative;
 }
 
+.maroonColor{
+  color: #800000;
+}
+
 .gradient {
   z-index: -1;
   left: 0;

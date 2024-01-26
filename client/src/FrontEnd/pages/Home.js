@@ -18,7 +18,7 @@ export const Home = () => {
       <Feature />
       <PopularServices />
       <Steps />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTA />
 
     </>
