@@ -55,21 +55,7 @@ export const Footer = () => {
                 <Link to="/categories/plumbing">Plumbing</Link>
               </li>
               <li>
-                <Link to="/categories/house_cleaning"> House Cleaning</Link>
-              </li>
-              <li>
-                <Link to="/categories/beauty_and_spa"> Beauty and Spa</Link>
-              </li>
-              <li>
-                <Link to="/categories/online_instructor">
-                  Online Instructor
-                </Link>
-              </li>
-              <li>
-                <Link to="/categories/event_management"> Event Management</Link>
-              </li>
-              <li>
-                <Link to="/categories/business"> Business</Link>
+                <Link to="/categories/painter"> Painter</Link>
               </li>
             </ul>
           </div>
