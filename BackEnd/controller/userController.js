@@ -7,19 +7,16 @@ const generateToken = require("../utils/generateTokens");
 //route    POST /api/users/auth
 //@access  Public
 const authUser = asyncHandler(async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  const user = await User.findOne({ username });
+  const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id);
     res.status(201).json({
-      _id: user._id,
-      fname: user.fname,
-      lname: user.lname,
-      username: user.username,
+      name: user.name,
       email: user.email,
-      balance: user.balance,
+      phone: user.phone,
     });
   } else {
     res.status(400);
