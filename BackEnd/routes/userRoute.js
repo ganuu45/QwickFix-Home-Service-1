@@ -1,5 +1,10 @@
 const route = require('express').Router();
 
-const {authUser}    = require('../controllers/userController');
+const {authUser, registerUser, loggoutUser }    = require('../controller/userController.js');
 
-route.post('/register',authUser);
+route.post('/register',registerUser);
+route.post('/login', authUser);
+route.get('/logout', loggoutUser);
+
+
+module.exports = route;

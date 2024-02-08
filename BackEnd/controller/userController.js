@@ -31,7 +31,10 @@ const authUser = asyncHandler(async (req, res) => {
 //route    POST /api/users
 //@access  Public
 const registerUser = asyncHandler(async (req, res) => {
+  
   const { name, phone, email, password } = req.body;
+
+  console.log(req.body);
 
   // Check if the username is already taken
   const userExists = await User.findOne({ email });
@@ -41,6 +44,7 @@ const registerUser = asyncHandler(async (req, res) => {
     return;
   }
 
+  
   // Create a new user
   const newUser = await User.create({
     name,
@@ -48,6 +52,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     password,
   });
+
 
   if (newUser) {
     generateToken(res, newUser._id);
@@ -75,3 +80,7 @@ const loggoutUser = asyncHandler(async (req, res) => {
     message: "User Loggout",
   });
 });
+
+
+
+module.exports = { authUser, registerUser, loggoutUser };

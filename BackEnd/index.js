@@ -7,16 +7,22 @@ const mongoose = require("mongoose");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const userRoute = require("./routes/userRoute");
 
-app.use(
-  sanitizer.clean({
-    xss: true,
-    noSql: true,
-    sql: true,
-  })
-);
-app.use(cors());
 
 
+
+app.use(express.json());
+  app.use(cors());
+  app.use(express.urlencoded({ extended: true }));
+
+  mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => console.log("DB Connection Successfull!"))
+    .catch((err) => {
+      console.log(err);
+    });
+
+
+app.use("/api/users", userRoute);
 
 //custom error handler
 app.use(notFound);
