@@ -17,6 +17,7 @@ const UserSchema = new mongoose.Schema({
     },
   },
   password: { type: String, required: true },
+  role : {type : String},
   serviceHistory: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "ServiceHistory",

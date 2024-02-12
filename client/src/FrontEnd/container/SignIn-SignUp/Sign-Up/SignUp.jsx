@@ -3,8 +3,10 @@ import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 import axios from "../../../api/axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const SIGN_UP_URL = "/user/register";
+const BASE_URL = "http://localhost:5000/api";
+const SIGN_UP_URL = "/users/register";
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -12,7 +14,6 @@ export const SignUp = () => {
   const [errMsg, setErrMsg] = useState("");
 
   const [values, setValues] = useState({
-    username: "",
     fullName: "",
     email: "",
     phone: "",
@@ -23,17 +24,6 @@ export const SignUp = () => {
   const inputs = [
     {
       id: 1,
-      name: "username",
-      type: "text",
-      placeholder: "Username",
-      errorMessage:
-        "Username should be 3-16 characters and shouldn't include any special character!",
-      label: "Username",
-      pattern: "^[A-Za-z0-9]{3,16}$",
-      required: true,
-    },
-    {
-      id: 2,
       name: "fullName",
       type: "text",
       placeholder: "Full Name",
@@ -43,7 +33,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 3,
+      id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
@@ -52,7 +42,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 4,
+      id: 3,
       name: "phone",
       type: "text",
       placeholder: "Phone Number",
@@ -61,7 +51,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 5,
+      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -72,7 +62,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 6,
+      id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
@@ -88,10 +78,9 @@ export const SignUp = () => {
 
     try {
       const response = await axios.post(
-        SIGN_UP_URL,
+        BASE_URL + SIGN_UP_URL,
         JSON.stringify({
-          username: values.username,
-          fullName: values.fullName,
+          name: values.fullName,
           email: values.email,
           password: values.password,
           phone: values.phone,
@@ -106,23 +95,17 @@ export const SignUp = () => {
 
       navigate("/SignIn");
 
-      console.log(response);
-      console.log(response?.data);
-      console.log(response?.accessToken);
-      console.log(JSON.stringify(response));
+
+
+      toast.success("Registred Successful");
+
     } catch (err) {
       if (err?.response?.status === 400) {
         alert(err?.response?.data?.message);
-      }
-      if (!err?.response) {
-        setErrMsg("No Server Response");
-      } else if (err.response?.status === 409) {
-        setErrMsg("Username, Email or Phone No. already exists!");
-      } else {
-        setErrMsg("Registration Failed");
+        toast.error(err?.response?.data?.message);
       }
     }
-    alert(errMsg);
+
   };
 
   const onChange = (e) => {

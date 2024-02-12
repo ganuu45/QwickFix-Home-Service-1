@@ -3,9 +3,11 @@ import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 // import AuthContext from "../../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify";
 
 import axios from "../../../api/axios";
-const LOGIN_URL = "/login";
+const BASE_URL = "http://localhost:5000/api";
+const LOGIN_URL = "/users/login";
 
 export const SignIn = () => {
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ export const SignIn = () => {
 
     try {
       const response = await axios.post(
-        LOGIN_URL,
+        BASE_URL+LOGIN_URL,
         JSON.stringify({ email: values.email, password: values.password }),
         {
           headers: { "Content-Type": "application/json" },
@@ -52,11 +54,12 @@ export const SignIn = () => {
         }
       );
 
-      console.log(JSON.stringify(response));
+      // console.log(JSON.stringify(response));
       navigate("/");
       window.location.reload();
-
-      const { fullName, role } = response.data.user;
+      toast.success("Login Successfull");
+      
+      const { name, role } = response.data;
 
       // setAuth({
       //   email: values.email,
@@ -67,8 +70,9 @@ export const SignIn = () => {
       const userDetails = {
         email: values.email,
         role,
-        fullName,
+        name,
       };
+      
       localStorage.setItem("response", JSON.stringify(userDetails));
     } catch (err) {
       if (!err?.response) {

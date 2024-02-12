@@ -4,6 +4,7 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/icons/logo2.png";
 import navbarStyles from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify";
 
 // import axios from "../../api/axios";
 // import { useContext } from "react";
@@ -25,10 +26,12 @@ export const Navbar = () => {
   }, []);
 
   const navigate = useNavigate();
+
   const handleLogout = () => {
     navigate("/");
     localStorage.removeItem("response");
     window.location.reload();
+    toast.success("Logged out Successfully");
   };
 
   return (

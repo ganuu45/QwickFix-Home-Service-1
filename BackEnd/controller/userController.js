@@ -17,6 +17,7 @@ const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       phone: user.phone,
+      role: user.role,
     });
   } else {
     res.status(400);
@@ -28,10 +29,12 @@ const authUser = asyncHandler(async (req, res) => {
 //route    POST /api/users
 //@access  Public
 const registerUser = asyncHandler(async (req, res) => {
-  
+
+  const role = "Customer";
+
   const { name, phone, email, password } = req.body;
 
-  console.log(req.body);
+
 
   // Check if the username is already taken
   const userExists = await User.findOne({ email });
@@ -41,13 +44,14 @@ const registerUser = asyncHandler(async (req, res) => {
     return;
   }
 
-  
+
   // Create a new user
   const newUser = await User.create({
     name,
     phone,
     email,
     password,
+    role
   });
 
 
@@ -57,6 +61,7 @@ const registerUser = asyncHandler(async (req, res) => {
       name: newUser.name,
       phone: newUser.phone,
       email: newUser.email,
+      role: newUser.role,
     });
   } else {
     res.status(400);
